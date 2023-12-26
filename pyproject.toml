@@ -8,6 +8,22 @@ packages = [{include = "serdex", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "~3.11"
+transformers = "^4.36.2"
+torch = "^2.1.2"
+llama-cpp-python = "^0.2.25"
+huggingface-hub = "^0.20.1"
+gradio = "^4.12.0"
+xformer = "^1.0.1"
+chromadb = "^0.4.21"
+langchain = "^0.0.352"
+accelerate = "^0.25.0"
+bitsandbytes = "^0.41.3.post2"
+unstructured = "^0.11.6"
+sentence-transformers = "^2.2.2"
+mysql-connector-python = "^8.2.0"
+sqlalchemy = "^2.0.23"
+pymysql = "^1.1.0"
+pandas = "^2.1.4"
 
 
 [build-system]
