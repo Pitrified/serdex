@@ -8,7 +8,6 @@ def sample_connection() -> MySQLAlchemy:
     host = "localhost"
     username = "api_access"
     database = "sakila"
-
     alchemist = MySQLAlchemy(host, username, database)
     return alchemist
 

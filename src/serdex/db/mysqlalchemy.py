@@ -3,6 +3,8 @@ import os
 import pandas as pd
 from sqlalchemy import create_engine
 
+from serdex.db.utils import uncapitalize_column_names
+
 
 class MySQLAlchemy:
     def __init__(self, host, username, database) -> None:
@@ -36,7 +38,9 @@ class MySQLAlchemy:
         """Dispose of the engine."""
         self.engine.dispose()
 
-    def read_df(self, query: str) -> pd.DataFrame:
+    def read_df(self, query: str, uncapitalize: bool = True) -> pd.DataFrame:
         """Read a dataframe."""
         df = pd.read_sql(query, self.engine)
+        if uncapitalize:
+            uncapitalize_column_names(df)
         return df
