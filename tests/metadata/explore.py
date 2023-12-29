@@ -1,5 +1,5 @@
 from serdex.db.mysqlalchemy import MySQLAlchemy
-from serdex.metadata.explore import get_table_names
+from serdex.metadata.explore import get_column_names, get_table_names
 
 
 def sample_connection() -> MySQLAlchemy:
@@ -17,7 +17,19 @@ def sample_read_tables() -> None:
     tables = get_table_names(alchemist)
     print(tables)
 
+    alchemist.close()
+
+
+def sample_read_columns() -> None:
+    """Read a sample dataframe."""
+    alchemist = sample_connection()
+    columns = get_column_names(alchemist, "film")
+    print(columns)
+
+    alchemist.close()
+
 
 if __name__ == "__main__":
     # sample_connection()
-    sample_read_tables()
+    # sample_read_tables()
+    sample_read_columns()

@@ -38,6 +38,10 @@ class MySQLAlchemy:
         """Dispose of the engine."""
         self.engine.dispose()
 
+    def sanitize_input(self, input: str) -> str:
+        """Sanitize the input."""
+        return self.engine.dialect.identifier_preparer.quote(input)
+
     def read_df(self, query: str, uncapitalize: bool = True) -> pd.DataFrame:
         """Read a dataframe."""
         df = pd.read_sql(query, self.engine)
