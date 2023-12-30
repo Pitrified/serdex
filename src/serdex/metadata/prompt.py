@@ -5,7 +5,7 @@ https://python.langchain.com/docs/use_cases/qa_structured/sql
 
 from langchain.prompts import PromptTemplate
 
-template_table_describe = """Given a table named {table_name}, that has the following columns:
+template_table_describe = """Given a table named "{table_name}", that has the following columns:
 
 {column_names}
 
